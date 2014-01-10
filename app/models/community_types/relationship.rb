@@ -1,0 +1,2 @@
+class Relationship < Community
+end

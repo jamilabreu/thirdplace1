@@ -1,0 +1,446 @@
+GIT
+  remote: git://github.com/Compass/compass-rails.git
+  revision: 30ca43b72a1a986a35055f9999a49b62e2257f5c
+  specs:
+    compass-rails (1.1.2)
+      compass (>= 0.12.2)
+
+GIT
+  remote: git://github.com/activerecord-hackery/polyamorous.git
+  revision: 0fa15a3fb2d1b6193018231bc8e19847cc90bfc4
+  branch: rails-4.1
+  specs:
+    polyamorous (0.6.4)
+      activerecord (>= 3.0)
+
+GIT
+  remote: git://github.com/activerecord-hackery/ransack.git
+  revision: 8693b6b64d89b03c7b64f5e1a7cc507a2e0ffea9
+  branch: rails-4.1
+  specs:
+    ransack (1.1.0)
+      actionpack (>= 4.0)
+      activerecord (>= 4.0)
+      activesupport (>= 4.0)
+      i18n
+
+GIT
+  remote: git://github.com/alexreisner/geocoder.git
+  revision: a78ea8f17d404c687e7fd73eaee18ad0f5ae800f
+  specs:
+    geocoder (1.1.9)
+
+GIT
+  remote: git://github.com/chriseppstein/compass.git
+  revision: 6f3b30869da77094901a4585968f5eda453c26ec
+  specs:
+    compass (1.0.0.alpha.17)
+      chunky_png (~> 1.2)
+      compass-core (~> 1.0.0.alpha.16)
+      compass-import-once (~> 1.0.1)
+      json
+      listen (~> 1.1.0)
+      sass (~> 3.3.0.rc.1)
+    compass-core (1.0.0.alpha.16)
+      multi_json (~> 1.0)
+      sass (>= 3.3.rc.1)
+
+GIT
+  remote: git://github.com/ericam/susy.git
+  revision: 403232c5ee2d5a7b7ebc56b3b334132dd32f045a
+  branch: susy-next
+  specs:
+    susy (2.0.0.beta.2)
+      sass (~> 3.3.0.rc.1)
+
+GIT
+  remote: git://github.com/gregbell/active_admin.git
+  revision: 8c2ff62c30beda6ae4f2c389c113c3a65bd5e785
+  specs:
+    activeadmin (1.0.0.pre)
+      arbre (~> 1.0)
+      bourbon
+      coffee-rails
+      devise (~> 3.2)
+      formtastic (~> 2.3.0.rc2)
+      inherited_resources (~> 1.3)
+      jquery-rails
+      jquery-ui-rails
+      kaminari (~> 0.14, != 0.15.0)
+      rails (>= 3.2, < 4.1)
+      ransack (~> 1.0)
+      sass-rails
+
+GIT
+  remote: git://github.com/jabreu52/bourbon.git
+  revision: 8fe953f96e347f9c40a19cf80ecd46800be1b328
+  specs:
+    bourbon (3.2.0.beta.1)
+      sass (>= 3.3.0.rc.1)
+      thor
+
+GIT
+  remote: git://github.com/jim/carmen-rails.git
+  revision: 076dd251e075d07408e0b5268f886956ef2a347c
+  specs:
+    carmen-rails (1.0.0)
+      carmen (~> 1.0.0)
+      rails
+
+GIT
+  remote: git://github.com/justinfrench/formtastic.git
+  revision: be1b7695b3b4a8d748238ee844eb25862a7d1642
+  specs:
+    formtastic (2.3.0.rc2)
+      actionpack (>= 3.0)
+
+GIT
+  remote: git://github.com/laserlemon/figaro.git
+  revision: 7631d9c99b8b986960ba0b9691e4ff63e5299cf1
+  specs:
+    figaro (0.7.0)
+      rails (>= 3, < 5)
+      thor (~> 0.14)
+
+GIT
+  remote: git://github.com/nex3/sass.git
+  revision: c8086d75437610142f33427b1f6af6b9b34baba8
+  specs:
+    sass (3.3.0.rc.2)
+      listen (~> 1.1.0)
+
+GIT
+  remote: git://github.com/norman/friendly_id.git
+  revision: b7d2b0c0d2095e6091e1fae0ea2bd032a7406ea1
+  specs:
+    friendly_id (5.0.2)
+      activerecord (>= 4.0.0)
+
+GIT
+  remote: git://github.com/plataformatec/devise.git
+  revision: e16278966fec9ca94c759a68f8bbe54d210471a4
+  specs:
+    devise (3.2.2)
+      bcrypt-ruby (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 3.2.6, < 5)
+      thread_safe (~> 0.1)
+      warden (~> 1.2.3)
+
+GIT
+  remote: git://github.com/plataformatec/simple_form.git
+  revision: 7fa6e5fc83fd5e8d3e5aca41058e6ba21c7361df
+  specs:
+    simple_form (3.0.1)
+      actionpack (>= 4.0.0, < 4.1)
+      activemodel (>= 4.0.0, < 4.1)
+
+GIT
+  remote: git://github.com/rails/arel.git
+  revision: da32cd1503756eac67ec244b4dcf16c40888134c
+  specs:
+    arel (5.0.0.20131204235845)
+
+GIT
+  remote: git://github.com/rails/coffee-rails.git
+  revision: 471ae515b57d484d494eba7e0a1f1016ebcc57e4
+  specs:
+    coffee-rails (4.0.1)
+      coffee-script (>= 2.2.0)
+      railties (>= 4.0.0, < 5.0)
+
+GIT
+  remote: git://github.com/rails/rails.git
+  revision: 65251820ef0ab7f3cffb38130de3dd41af8d72be
+  specs:
+    actionmailer (4.1.0.beta1)
+      actionpack (= 4.1.0.beta1)
+      actionview (= 4.1.0.beta1)
+      mail (~> 2.5.4)
+    actionpack (4.1.0.beta1)
+      actionview (= 4.1.0.beta1)
+      activesupport (= 4.1.0.beta1)
+      rack (~> 1.5.2)
+      rack-test (~> 0.6.2)
+    actionview (4.1.0.beta1)
+      activesupport (= 4.1.0.beta1)
+      builder (~> 3.1)
+      erubis (~> 2.7.0)
+    activemodel (4.1.0.beta1)
+      activesupport (= 4.1.0.beta1)
+      builder (~> 3.1)
+    activerecord (4.1.0.beta1)
+      activemodel (= 4.1.0.beta1)
+      activesupport (= 4.1.0.beta1)
+      arel (~> 5.0.0)
+    activesupport (4.1.0.beta1)
+      i18n (~> 0.6, >= 0.6.9)
+      json (~> 1.7, >= 1.7.7)
+      minitest (~> 5.1)
+      thread_safe (~> 0.1)
+      tzinfo (~> 1.1)
+    rails (4.1.0.beta1)
+      actionmailer (= 4.1.0.beta1)
+      actionpack (= 4.1.0.beta1)
+      actionview (= 4.1.0.beta1)
+      activemodel (= 4.1.0.beta1)
+      activerecord (= 4.1.0.beta1)
+      activesupport (= 4.1.0.beta1)
+      bundler (>= 1.3.0, < 2.0)
+      railties (= 4.1.0.beta1)
+      sprockets-rails (~> 2.0.0)
+    railties (4.1.0.beta1)
+      actionpack (= 4.1.0.beta1)
+      activesupport (= 4.1.0.beta1)
+      rake (>= 0.8.7)
+      thor (>= 0.18.1, < 2.0)
+
+GIT
+  remote: git://github.com/rails/sass-rails.git
+  revision: f65b9005de112b74cd09e5dedeae23603c3b1413
+  specs:
+    sass-rails (4.0.1)
+      railties (>= 4.0.0, < 5.0)
+      sass (>= 3.2.0)
+      sprockets-rails (~> 2.0.0)
+
+GIT
+  remote: git://github.com/rails/sprockets-rails.git
+  revision: 3a8971aa49a447194c41cb93d26c8d3a4cfadb61
+  specs:
+    sprockets-rails (2.0.1)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      sprockets (~> 2.8)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    arbre (1.0.1)
+      activesupport (>= 3.0.0)
+    atomic (1.1.14)
+    bcrypt-ruby (3.1.2)
+    breakpoint (2.4.1)
+      compass (~> 1.0.0.alpha.13)
+      sass (~> 3.3.0.rc.2)
+      sassy-maps (< 1.0.0)
+    builder (3.2.2)
+    carmen (1.0.0)
+      unicode_utils (~> 1.4.0)
+    carrierwave (0.9.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+    chunky_png (1.2.9)
+    coderay (1.1.0)
+    coffee-script (2.2.0)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.6.3)
+    compass-import-once (1.0.2)
+    dotenv (0.9.0)
+    em-websocket (0.5.0)
+      eventmachine (>= 0.12.9)
+      http_parser.rb (~> 0.5.3)
+    erubis (2.7.0)
+    eventmachine (1.0.3)
+    excon (0.31.0)
+    execjs (2.0.2)
+    ffaker (1.22.1)
+    ffi (1.9.3)
+    fog (1.19.0)
+      builder
+      excon (~> 0.31.0)
+      formatador (~> 0.2.0)
+      mime-types
+      multi_json (~> 1.0)
+      net-scp (~> 1.1)
+      net-ssh (>= 2.1.3)
+      nokogiri (~> 1.5)
+      ruby-hmac
+    font-awesome-rails (4.0.3.1)
+      railties (>= 3.2, < 5.0)
+    foreman (0.63.0)
+      dotenv (>= 0.7)
+      thor (>= 0.13.6)
+    formatador (0.2.4)
+    guard (1.8.2)
+      formatador (>= 0.2.4)
+      listen (>= 1.0.0)
+      lumberjack (>= 1.0.2)
+      pry (>= 0.9.10)
+      thor (>= 0.14.6)
+    guard-livereload (1.4.0)
+      em-websocket (>= 0.5.0)
+      guard (>= 1.8.0)
+      multi_json (~> 1.7)
+    has_scope (0.6.0.rc)
+      actionpack (>= 3.2, < 5)
+      activesupport (>= 3.2, < 5)
+    hashie (2.0.5)
+    hike (1.2.3)
+    http_parser.rb (0.5.3)
+    i18n (0.6.9)
+    inherited_resources (1.4.1)
+      has_scope (~> 0.6.0.rc)
+      responders (~> 1.0.0.rc)
+    jbuilder (1.5.3)
+      activesupport (>= 3.0.0)
+      multi_json (>= 1.2.0)
+    jquery-rails (3.0.4)
+      railties (>= 3.0, < 5.0)
+      thor (>= 0.14, < 2.0)
+    jquery-ui-rails (4.1.1)
+      railties (>= 3.1.0)
+    json (1.8.1)
+    kaminari (0.14.1)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
+    linkedin (0.4.4)
+      hashie (>= 1.2, < 2.1)
+      multi_json (~> 1.0)
+      oauth (~> 0.4)
+    listen (1.1.6)
+      rb-fsevent (>= 0.9.3)
+      rb-inotify (>= 0.9)
+      rb-kqueue (>= 0.2)
+    lumberjack (1.0.4)
+    mail (2.5.4)
+      mime-types (~> 1.16)
+      treetop (~> 1.4.8)
+    method_source (0.8.2)
+    mime-types (1.25.1)
+    mini_magick (3.7.0)
+      subexec (~> 0.2.1)
+    mini_portile (0.5.2)
+    minitest (5.2.1)
+    multi_json (1.8.2)
+    net-scp (1.1.2)
+      net-ssh (>= 2.6.5)
+    net-ssh (2.7.0)
+    nokogiri (1.6.1)
+      mini_portile (~> 0.5.0)
+    oauth (0.4.7)
+    omniauth (1.1.4)
+      hashie (>= 1.2, < 3)
+      rack
+    omniauth-linkedin (0.1.0)
+      omniauth-oauth (~> 1.0)
+    omniauth-oauth (1.0.1)
+      oauth
+      omniauth (~> 1.0)
+    orm_adapter (0.5.0)
+    pg (0.17.1)
+    polyglot (0.3.3)
+    pry (0.9.12.4)
+      coderay (~> 1.0)
+      method_source (~> 0.8)
+      slop (~> 3.4)
+    puma (2.7.1)
+      rack (>= 1.1, < 2.0)
+    quiet_assets (1.0.2)
+      railties (>= 3.1, < 5.0)
+    rack (1.5.2)
+    rack-test (0.6.2)
+      rack (>= 1.0)
+    rake (10.1.1)
+    rb-fsevent (0.9.4)
+    rb-inotify (0.9.3)
+      ffi (>= 0.5.0)
+    rb-kqueue (0.2.0)
+      ffi (>= 0.5.0)
+    rdoc (3.12.2)
+      json (~> 1.4)
+    responders (1.0.0)
+      railties (>= 3.2, < 5)
+    ruby-hmac (0.4.0)
+    sassy-maps (0.3.1)
+      compass (~> 1.0.0.alpha.13)
+      sass (~> 3.3.0.rc.2)
+    sdoc (0.3.20)
+      json (>= 1.1.3)
+      rdoc (~> 3.10)
+    slim (2.0.2)
+      temple (~> 0.6.6)
+      tilt (>= 1.3.3, < 2.1)
+    slim-rails (2.0.4)
+      actionpack (>= 3.0, < 4.1)
+      activesupport (>= 3.0, < 4.1)
+      railties (>= 3.0, < 4.1)
+      slim (~> 2.0)
+    slop (3.4.7)
+    spring (1.0.0)
+    sprockets (2.10.1)
+      hike (~> 1.2)
+      multi_json (~> 1.0)
+      rack (~> 1.0)
+      tilt (~> 1.1, != 1.3.0)
+    subexec (0.2.3)
+    table_print (1.5.1)
+    temple (0.6.7)
+    thor (0.18.1)
+    thread_safe (0.1.3)
+      atomic
+    tilt (1.4.1)
+    treetop (1.4.15)
+      polyglot
+      polyglot (>= 0.3.1)
+    turbolinks (2.1.0)
+      coffee-rails
+    tzinfo (1.1.0)
+      thread_safe (~> 0.1)
+    uglifier (2.4.0)
+      execjs (>= 0.3.0)
+      json (>= 1.8.0)
+    unicode_utils (1.4.0)
+    warden (1.2.3)
+      rack (>= 1.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  activeadmin!
+  arel!
+  bourbon!
+  breakpoint
+  carmen-rails!
+  carrierwave
+  coffee-rails!
+  compass!
+  compass-rails!
+  devise!
+  ffaker
+  figaro!
+  fog
+  font-awesome-rails
+  foreman
+  formtastic!
+  friendly_id!
+  geocoder!
+  guard
+  guard-livereload
+  jbuilder (~> 1.2)
+  jquery-rails
+  kaminari
+  linkedin
+  mini_magick
+  omniauth
+  omniauth-linkedin
+  pg
+  polyamorous!
+  puma
+  quiet_assets
+  rails!
+  ransack!
+  sass!
+  sass-rails!
+  sdoc
+  simple_form!
+  slim-rails
+  spring
+  sprockets-rails!
+  susy!
+  table_print
+  turbolinks
+  uglifier (>= 1.3.0)

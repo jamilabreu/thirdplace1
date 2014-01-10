@@ -1,0 +1,2 @@
+class Interest < Community
+end

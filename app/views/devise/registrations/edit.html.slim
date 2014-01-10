@@ -1,0 +1,74 @@
+- content_for :javascript do
+	= javascript_include_tag 'select2.min', 'users-edit'
+
+- content_for :stylesheet do
+	= stylesheet_link_tag 'select2'
+
+.container
+	div
+		' Location:
+		= request.location
+	div
+		' Address:
+		= request.location.address
+	div
+		' City:
+		= request.location.city
+	div
+		' Country:
+		= request.location.country
+	div
+		' Country Code:
+		= request.location.country_code
+	div
+		' State:
+		= request.location.state
+	div
+		' State Code:
+		= request.location.state_code
+
+	= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f|
+		= f.error_notification
+		.form-inputs
+			.edit-profile-image
+				= image_tag current_user.image_url(:profile)
+			= f.input :image, as: :file, label: false
+
+			/ = f.input :name
+			/ = f.input :email
+			/ = f.association :genders, collection: Gender.order('name ASC'), label: "Gender", placeholder: "Select One"
+
+		/ .form-divider COMMUNITIES
+
+		.form-inputs
+			= f.association :cities, as: :hidden, label: "Current City", input_html: { value: current_user.city_ids.present? ? current_user.city_ids : nil, data: { type: "City", placeholder: "Select a City..." }}
+			= f.association :schools, as: :hidden, label: "School(s)", input_html: { value: current_user.school_ids.present? ? current_user.school_ids : nil, data: { type: "School", placeholder: "What school(s) have you attended?" }}
+			= f.association :cultures, collection: Culture.order(:name), label: "Culture(s)", placeholder: "Which culture(s) do you identify with?"
+			/ = f.association :cultures, as: :hidden, label: "Culture(s)", input_html: { value: current_user.culture_ids.present? ? current_user.culture_ids : nil, data: { type: "Culture", placeholder: "Which culture(s) do you identify with?" }}
+			= f.association :interests, as: :hidden, label: "Passion(s)", input_html: { value: current_user.interest_ids.present? ? current_user.interest_ids : nil, data: { type: "Interest", placeholder: "What are you passionate about?" }}
+
+		.form-divider PERSONAL
+
+		.form-inputs
+			= f.association :relationships, collection: Relationship.all, label: "Relationship", placeholder: "I am ...", input_html: { multiple: false }
+			= f.association :orientations, collection: Orientation.all, label: "Orientation", placeholder: "I am ...", input_html: { multiple: false }
+			= f.association :religions, collection: Religion.order(:name), label: "Religion", placeholder: "I am ...", input_html: { multiple: false }
+
+		.form-divider EDUCATION
+
+		.form-inputs
+			= f.association :standings, collection: Standing.order(:name), label: "Standing", placeholder: "I am currently a(n)...", input_html: { multiple: false }
+			= f.association :degrees, collection: Degree.order(:name), label: "Degree", placeholder: "I have / am pursuing...", input_html: { multiple: false }
+
+		.form-divider EXPERIENCE
+
+		.form-inputs
+			= f.association :professions, collection: Profession.order(:name), label: "Profession(s)", placeholder: "What do you do for a living?"
+			= f.association :companies, collection: Company.order(:name), label: "Employer(s)", placeholder: "I work at..."
+			= f.association :fields, collection: Field.order(:name), label: "Field(s)", placeholder: "I work in..."
+		/ = f.input :password, :autocomplete => "off", :hint => "leave it blank if you don't want to change it"
+		/ = f.input :password_confirmation
+		/ = f.input :current_password, :hint => "we need your current password to confirm your changes"
+		.form-actions
+			.submit-button
+				= f.button :button, "UPDATE PROFILE"

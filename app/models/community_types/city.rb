@@ -1,0 +1,2 @@
+class City < Community
+end

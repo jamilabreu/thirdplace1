@@ -1,0 +1,102 @@
+// PALETTE
+$dark-purple: #4F5468
+$gray: #F1F1F1
+$green: #88B87C
+$light-purple: #DEE3EA
+$purple: #656B84
+$turquoise: #01A595
+
+// VARIABLES
+$base-font-color: #333
+$base-font-family: "proxima-nova", $helvetica
+$base-font-size: 16px
+$base-line-height: ceil(golden-ratio($base-font-size, 1))
+
+$base-accent-color: #49638C
+$base-border-color: #DDD
+
+$base-link-color: $base-accent-color
+$hover-link-color: $base-accent-color
+
+$form-font-size: $base-font-size
+$form-font-family: $base-font-family
+$form-border-color: $base-border-color
+$form-border-color-hover: darken($base-border-color, 10)
+$form-border-color-focus: #656B84
+$form-box-shadow: inset 0 1px 2px hsla(0, 0%, 0%, 0.06)
+
+// RHYTHM
+@include establish-baseline
+$rhythm-unit: rem
+
+// MIXINS
+@mixin adjust-line-height-to($font-size)
+  @include rem(font-size, $font-size)
+  @include rem(line-height, ceil(golden-ratio($font-size, 1)))
+
+@mixin adjust-font-size-and-line-height-to($font-size, $line-height)
+  @include rem(font-size, $font-size)
+  @include rem(line-height, $line-height)
+
+// BASE
+html
+  -webkit-font-smoothing: antialiased
+  color: $base-font-color
+  font-family: $base-font-family
+
+h1, h2, h3, h4, h5, h6
+  text-rendering: optimizeLegibility
+  margin: 0
+
+p
+  margin: 0
+
+a
+  @include transition(color 0.1s linear)
+  color: $base-link-color
+  text-decoration: none
+  &:hover
+    color: $hover-link-color
+  &:active, &:focus
+    color: $hover-link-color
+    outline: none
+
+img
+  display: block
+  margin: 0
+  max-width: 100%
+
+// LISTS
+ul, ol
+  margin: 0
+  padding: 0
+  list-style-type: none
+  &%default-ul
+    list-style-type: disc
+    margin-bottom: $base-line-height / 2
+    padding-left: $base-line-height
+  &%default-ol
+    list-style-type: decimal
+    margin-bottom: $base-line-height / 2
+    padding-left: $base-line-height
+
+// FORMS
+textarea, #{$all-text-inputs}
+  @include box-sizing(border-box)
+  @include transition(border-color)
+  -webkit-appearance: none
+  background-color: white
+  border: 1px solid $form-border-color
+  border-radius: 2px
+  box-shadow: $form-box-shadow
+  font-family: $form-font-family
+  font-size: $form-font-size
+  margin-bottom: $base-line-height / 2
+  padding: ($base-line-height / 3) ($base-line-height / 3)
+  resize: none
+  width: 100%
+  &:hover
+    border-color: $form-border-color-hover
+  &:focus
+    border-color: $form-border-color-focus
+    outline: none

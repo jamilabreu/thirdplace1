@@ -1,0 +1,21 @@
+- content_for :javascript do
+  = javascript_include_tag 'imagesloaded.min', 'packery.min', 'infinitescroll.min', 'users'
+
+.container
+  .users-column
+    .users
+      = render @users
+    = paginate @users, remote: true
+    .users-loading
+  .filters-column
+    .filters
+      - @subclass_names.each do |name|
+        - if instance_variable_get("@#{name}_filters").present?
+          ul
+            li.filter-title= name.capitalize
+            - instance_variable_get("@#{name}_filters").each do |community|
+              li class=("active-filter" if params[:f].try(:include?, community.id.to_s))
+                = link_to url_for(params.merge(f: params[:f] ? params[:f].include?(community.id.to_s) ? params[:f] - [community.id.to_s] : params[:f] + [community.id.to_s] : [community.id.to_s])) do
+                  = community.filter_name
+                  - if params[:f].try(:include?, community.id.to_s)
+                    i.fa.fa-times-circle

@@ -1,0 +1,2 @@
+class Profession < Community
+end

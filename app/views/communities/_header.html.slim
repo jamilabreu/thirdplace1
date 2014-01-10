@@ -1,0 +1,22 @@
+.title-bar
+	.container
+		ul
+			li
+				i.fa.fa-globe
+				= @community.name
+.tabs-bar
+	.container
+		ul
+			li
+				= link_to root_path do
+					i.fa.fa-bars
+					| News
+			li class=('active' if current_page? community_path(@community))
+				= link_to community_path(@community) do
+					i.fa.fa-user
+					| People
+			- if @community.has_subcommunities?
+				li class=('active' if current_page? community_groups_path(@community))
+					= link_to community_groups_path(@community) do
+						i.fa.fa-circle-o
+						| Groups

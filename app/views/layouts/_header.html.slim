@@ -1,0 +1,45 @@
+header
+	.top-bar
+		.container
+			ul
+				li
+					= link_to root_path do
+						| thirdplace
+			ul.actions
+				- if user_signed_in?
+					li
+						= link_to root_path do
+							i.fa.fa-home
+					li
+						= link_to communities_path do
+							i.fa.fa-globe
+					li
+						= link_to root_path do
+							i.fa.fa-envelope-o
+					li
+						= link_to edit_user_registration_path do
+							i.fa.fa-cogs
+					li
+						= link_to destroy_user_session_path, method: :delete do
+							i.fa.fa-times-circle
+				- else
+					li= link_to 'signup', signup_path(community: @community ? @community.id : nil)
+					li= link_to 'login', new_user_session_path
+
+	- if @community
+		= render 'communities/header'
+	- elsif current_page? edit_user_registration_path
+		= render 'devise/registrations/header'
+	- elsif current_page?(communities_path) || current_page?(unauthenticated_root_path)
+	- elsif current_page? root_path
+		= render 'users/header'
+
+	- unless user_signed_in? || current_page?(signup_path) || params[:controller] == 'devise/sessions' || params[:controller] == 'users/registrations'
+		.signup-prompt
+			.container
+				ul
+					- if @community
+						| This community is part of the thirdplace network. Please #{link_to "signup", signup_path(community: @community.id)} or #{link_to "login", new_user_session_path} to participate.
+					- else
+						| These communities are part of the thirdplace network. Please #{link_to "signup", signup_path} or #{link_to "login", new_user_session_path} to participate.
+

@@ -1,0 +1,8 @@
+- content_for :javascript do
+  = javascript_include_tag ""
+
+.container
+  .groups-column
+    .groups
+      - @groups.each do |group|
+      	= link_to group.name, community_path(group)

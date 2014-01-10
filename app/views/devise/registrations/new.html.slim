@@ -1,0 +1,13 @@
+.container
+	.signup-box
+		= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+			= f.error_notification
+
+			.form-inputs
+				= f.input :email, label: false, placeholder: "Email", autofocus: true
+				= f.input :password, label: false, placeholder: "Password"
+
+			.form-actions
+				.submit-button
+					= f.button :submit, "SIGN UP"
+			= link_to "I already have an account", new_session_path(resource_name)

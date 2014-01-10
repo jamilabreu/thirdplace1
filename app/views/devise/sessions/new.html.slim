@@ -1,0 +1,20 @@
+.container
+	.signup-box
+		.signup-button.facebook-button
+			= link_to user_omniauth_authorize_path(:linkedin) do
+				i.fa.fa-facebook
+				| Login with Facebook
+		br
+		.signup-button.linkedin-button
+			= link_to user_omniauth_authorize_path(:linkedin) do
+				i.fa.fa-linkedin
+				| Login with LinkedIn
+		br
+		span or
+		= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+			= alert || notice
+			.form-inputs
+				= f.input :email, label: false, placeholder: "Email"
+				= f.input :password, label: false, placeholder: "Password"
+			.form-actions
+				= f.button :submit, "Login with Email", class: ''

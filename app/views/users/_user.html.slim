@@ -1,0 +1,12 @@
+.user id=(user.id)
+  = link_to user, remote: true do
+    .user-card
+      .user-image
+      	/ = image_tag "http://graph.facebook.com/#{rand(300000..302715)}/picture?type=large"
+      	= image_tag user.image_url(:profile)
+      .user-name
+        = user.first_name
+        i.fa.fa-angle-right
+      .user-loading
+      	i.fa.fa-spinner.fa-spin
+  .user-main

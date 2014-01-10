@@ -1,0 +1,70 @@
+- content_for :javascript do
+  = javascript_include_tag ""
+
+
+/ - content_for :javascript do
+/   = javascript_include_tag 'imagesloaded.min', 'packery.min', 'infinitescroll.min', 'users'
+
+/ header
+/   .top-bar
+/     .container
+/       ul
+/         li
+/           = link_to root_path do
+/             | thirdplace
+/       ul.actions
+/         - if user_signed_in?
+/           li
+/             = link_to root_path do
+/               i.fa.fa-home
+/           li
+/             = link_to root_path do
+/               i.fa.fa-globe
+/           li
+/             = link_to root_path do
+/               i.fa.fa-envelope-o
+/           li
+/             = link_to edit_user_registration_path do
+/               i.fa.fa-cogs
+/           li
+/             = link_to destroy_user_session_path, method: :delete do
+/               i.fa.fa-times-circle
+/         - else
+/           li= link_to 'signup', new_user_registration_path
+/           li= link_to 'login', new_user_session_path
+/   .title-bar
+/     .container
+/       ul
+/         li
+/           i.fa.fa-globe
+/           | National Dominican Student Conference
+/   .tabs-bar
+/     .container
+/       ul
+/         li
+/           = link_to root_path do
+/             i.fa.fa-bars
+/             | News
+/         li.active
+/           = link_to root_path do
+/             i.fa.fa-user
+/             | People
+/         li
+/           = link_to root_path do
+/             i.fa.fa-circle-o
+/             | Groups
+/ .container
+/   .users-column
+/     .users
+/       = render @users
+/     = paginate @users, remote: true
+/     .users-loading
+/   .filters-column
+/     .filters
+/       - 5.times do
+/         ul
+/           li.filter-title Title
+/           - 20.times do
+/             li
+/               = link_to root_path do
+/                 = Faker::Lorem.words.join(" ")

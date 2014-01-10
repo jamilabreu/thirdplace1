@@ -1,0 +1,2 @@
+class Culture < Community
+end

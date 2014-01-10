@@ -1,0 +1,7 @@
+.tabs-bar
+	.container
+		ul
+			li class=('active' if current_page? root_path)
+				= link_to root_path do
+					i.fa.fa-user
+					| People

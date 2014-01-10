@@ -1,0 +1,2 @@
+class Religion < Community
+end

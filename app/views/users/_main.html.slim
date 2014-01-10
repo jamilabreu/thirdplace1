@@ -1,0 +1,8 @@
+.user-communities
+  = user.communities.order(:name).map { |community| "<div class='user-community'><i class='fa fa-caret-right'></i>" + community.name + "</div>"}.join(" ").html_safe
+/ .user-profiles
+/   = link_to root_path, class: "facebook" do
+/     i.fa.fa-facebook
+.user-actions
+  = link_to root_path do
+      | Introduce Yourself to #{user.name.split(" ")[0]}

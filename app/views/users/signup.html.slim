@@ -1,0 +1,26 @@
+.container
+	.signup-box
+		- if params[:community].present?
+			.signup-button.facebook-button
+				= link_to user_omniauth_authorize_path(:linkedin, community: params[:community]) do
+					i.fa.fa-facebook
+					| Sign up with Facebook
+			br
+			.signup-button.linkedin-button
+				= link_to user_omniauth_authorize_path(:linkedin, community: params[:community]) do
+					i.fa.fa-linkedin
+					| Sign up with LinkedIn
+			br
+		- else
+			.signup-button.facebook-button
+				= link_to user_omniauth_authorize_path(:linkedin) do
+					i.fa.fa-facebook
+					| Sign up with Facebook
+			br
+			.signup-button.linkedin-button
+				= link_to user_omniauth_authorize_path(:linkedin) do
+					i.fa.fa-linkedin
+					| Sign up with LinkedIn
+			br
+		span or
+		= link_to "Sign up with your email address", new_user_registration_path

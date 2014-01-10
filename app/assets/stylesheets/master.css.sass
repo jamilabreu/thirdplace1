@@ -1,0 +1,331 @@
+// CONTAINER
+.container
+  @include container($small-grid)
+  @include breakpoint($medium)
+    @include container($medium-grid)
+
+// HEADER
+header
+  @include rem(margin-bottom, rhythm(1))
+
+// TOP
+.top-bar
+  @include adjust-font-size-to(14px)
+  background: $dark-purple
+  ul
+    display: inline-block
+    li
+      display: inline-block
+      a
+        color: #7C8196
+        display: block
+        font-weight: 700
+    &.actions
+      @include transform(skew(-20deg))
+      background: #434759
+      float: right
+      li
+        a
+          @include transform(skew(20deg))
+          padding: 0 13px
+          &:hover
+            color: white
+
+// TITLE
+.title-bar
+  @include adjust-font-size-to(18px)
+  background: $purple
+  ul
+    li
+      @include padding-leader(0.75)
+      @include padding-trailer(0.75)
+      color: white
+      i
+        @include rem(margin-right, 7px)
+
+// TABS
+.tabs-bar
+  @include adjust-font-size-to(14px)
+  @include apply-side-rhythm-border(bottom, 1px, 0, $border-style: solid $light-purple)
+  background: $gray
+  ul
+    margin-bottom: -1px
+    li
+      display: inline-block
+      a
+        display: block
+        font-weight: 700
+        line-height: rhythm(1.5)
+        padding: 0 rhythm(0.75)
+        i
+          @include rem(margin-right, 7px)
+      &.active
+        a
+          @include apply-side-rhythm-border(left, 1px, 0, $border-style: solid $light-purple)
+          @include apply-side-rhythm-border(right, 1px, 0, $border-style: solid $light-purple)
+          background: white
+
+// SIGNUP PROMPT
+.signup-prompt
+  // @include adjust-font-size-to(16px)
+  @include rem(margin-top, rhythm(1))
+  ul
+    background: #dff0d8
+    border-radius: 2px
+    color: #3c763d
+    padding: rhythm(0.5) rhythm(1)
+    text-align: center
+    a
+      font-weight: 700
+    i
+      margin-left: 10px
+
+// USERS GRID
+.filters-column
+  @include span(4 of $small-grid)
+  @include breakpoint($medium)
+    @include span(2 of $medium-grid)
+
+.users-column
+  @include span(4 of $small-grid)
+  @include breakpoint($medium)
+    @include span(last 5 of $medium-grid)
+
+// FILTERS
+.filters
+  @include rem(padding-right, rhythm(0.5))
+  ul
+    @include margin-trailer(0.75)
+    li
+      a
+        @include adjust-font-size-and-line-height-to(15px, 17px)
+        display: block
+        padding-top: 6px
+        i
+          float: right
+      &.filter-title
+        @include adjust-font-size-and-line-height-to(14px, 23px)
+        @include leading-border(1px, 0, $border-style: solid $light-purple)
+        color: $dark-purple
+        font-weight: 700
+        text-transform: uppercase
+      &.active-filter
+        a
+          color: #01A595
+
+// USERS
+$user-image-size: 137px
+$user-image-size-medium: 154px
+
+.users
+  @include pie-clearfix
+
+.user
+  border: 1px solid $light-purple
+  border-radius: 4px
+  box-shadow: 1px 1px 2px #f1f1f1
+  float: left
+  margin-bottom: 13px
+  margin-right: 13px
+  padding: 2px
+  &:nth-child(3n + 3)
+    margin-right: 0
+
+.user-card
+  position: relative
+
+.user-image
+  img
+    border-radius: 2px
+    height: $user-image-size
+    width: $user-image-size
+    @include breakpoint($medium)
+      height: $user-image-size-medium
+      width: $user-image-size-medium
+
+.user-name
+  @include adjust-line-height-to(14px)
+  background: white
+  border-top-right-radius: 4px
+  bottom: -2px
+  color: $dark-purple
+  font-weight: 600
+  left: 0
+  padding-left: 6px
+  padding-right: 8px
+  position: absolute
+  i
+    padding-left: 6px
+
+.user-loading
+  display: none
+  position: absolute
+  text-align: center
+  top: 42%
+  width: 100%
+  i
+    color: white
+
+.user-main
+  display: none
+
+.user.is-expanded
+  @include box-sizing(border-box)
+  width: 99.99%
+  .user-card
+    @include transition(all 0.2s ease)
+    float: left
+    margin-left: $user-image-size * -0.8
+    @include breakpoint($medium)
+      margin-left: 0
+  .user-main
+    display: block
+    padding: 13px 13px 8px
+    @include breakpoint($medium)
+      margin-left: $user-image-size-medium
+
+.user-communities
+  @include adjust-font-size-to(14px)
+  min-height: 123px
+  padding: 0 13px 13px 30px
+  @include breakpoint($medium)
+    min-height: 77px
+    padding: 0 13px 13px
+
+.user-community
+  font-weight: 600
+  i
+    color: #999
+    margin-right: 7px
+
+.user-profiles
+  text-align: center
+
+.user-actions
+  border: 1px solid $light-purple
+  border-radius: 2px
+  padding: 2px
+  a
+    background: $turquoise
+    border-radius: 2px
+    color: white
+    display: block
+    font-weight: 700
+    padding: 6px 0
+    text-align: center
+
+// PAGINATION
+nav.pagination
+  padding: 13px 0
+  text-align: center
+
+// SIGNUP
+.signup-box
+  background: $gray
+  border: 1px solid $light-purple
+  border-radius: 2px
+  padding: rhythm(2) rhythm(1)
+  text-align: center
+  span
+    color: #999
+    display: block
+    margin-bottom: 7px
+
+.signup-button
+  background: white
+  border: 1px solid $light-purple
+  border-radius: 200px
+  display: inline-block
+  margin-bottom: 13px
+  padding: 2px
+  a
+    border-radius: 200px
+    color: white
+    display: block
+    font-weight: 700
+    padding: 7px 21px
+    i
+      border-right: 1px solid rgba(255,255,255,0.25)
+      color: white
+      margin-right: 15px
+      padding-right: 15px
+  &.linkedin-button
+    a
+      background: #1c87bd
+  &.facebook-button
+    a
+      background: #3B5998
+  &.email-button
+    a
+      background: #999
+
+// FORMS
+.submit-button
+  background: white
+  border: 1px solid $light-purple
+  border-radius: 200px
+  margin-bottom: 13px
+  padding: 0 2px
+  button
+    @include adjust-font-size-to(13px)
+    background: $purple
+    border: 0
+    border-radius: 200px
+    color: white
+    display: block
+    font-weight: 700
+    padding: 6px 0
+    width: 100%
+
+// NEW USER
+#new_user
+  margin: 0 auto
+  max-width: 245px
+
+// EDIT USER
+#edit_user
+  margin: 0 auto
+  max-width: 299px
+  .form-divider
+    @include adjust-font-size-to(14px)
+    border-top: 1px solid $light-purple
+    color: $dark-purple
+    font-weight: 700
+    text-transform: uppercase
+  .form-inputs
+    margin-bottom: 10px
+    & ~ .form-inputs
+      margin-bottom: 23px
+  label
+    @include adjust-font-size-to(14px)
+    color: #01A595//$green //#888
+    font-weight: 600
+  .input.select
+    margin-bottom: 3px
+  .edit-profile-image
+    border: 1px solid $light-purple
+    border-radius: 2px
+    float: left
+    padding: 2px
+    img
+      border-radius: 2px
+  .submit-button
+    margin-top: 25px
+
+.user_cities
+  .selectize-control::before
+    @include transition(opacity 0.2s)
+    content: ' '
+    z-index: 2
+    position: absolute
+    display: block
+    top: 24%
+    right: 34px
+    width: 16px
+    height: 16px
+    background: image-url('spinner.gif')
+    background-size: 16px 16px
+    opacity: 0
+  &.loading
+    .selectize-control::before
+      opacity: 1
