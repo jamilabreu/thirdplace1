@@ -7,7 +7,7 @@
 .container
 	div
 		' Location:
-		= request.location
+		= request.location.latitude
 	div
 		' Address:
 		= request.location.address
@@ -41,7 +41,7 @@
 		/ .form-divider COMMUNITIES
 
 		.form-inputs
-			= f.association :cities, as: :hidden, label: "Current City", input_html: { value: current_user.city_ids.present? ? current_user.city_ids : nil, data: { type: "City", placeholder: "Select a City..." }}
+			= f.association :cities, as: :hidden, label: "Nearest City", input_html: { value: current_user.city_ids.present? ? current_user.city_ids : nil, data: { type: "City", placeholder: "Select a City..." }}
 			= f.association :schools, as: :hidden, label: "School(s)", input_html: { value: current_user.school_ids.present? ? current_user.school_ids : nil, data: { type: "School", placeholder: "What school(s) have you attended?" }}
 			= f.association :cultures, collection: Culture.order(:name), label: "Culture(s)", placeholder: "Which culture(s) do you identify with?"
 			/ = f.association :cultures, as: :hidden, label: "Culture(s)", input_html: { value: current_user.culture_ids.present? ? current_user.culture_ids : nil, data: { type: "Culture", placeholder: "Which culture(s) do you identify with?" }}
