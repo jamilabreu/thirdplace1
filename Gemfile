@@ -70,4 +70,5 @@ group :development do
 	gem 'table_print'
 end
 
-gem 'sdoc',             group: :doc, require: false
+gem 'rails_12factor', group: :production
+gem 'sdoc', group: :doc, require: false
