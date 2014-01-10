@@ -29,5 +29,8 @@ module Thirdplace
 
     # Model Subfolders
     config.autoload_paths += Dir[Rails.root.join('app', 'models', '**')]
+
+    # Avoid Locales Warning
+    config.i18n.enforce_available_locales = true
   end
 end
