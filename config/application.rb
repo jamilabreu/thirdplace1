@@ -31,6 +31,6 @@ module Thirdplace
     config.autoload_paths += Dir[Rails.root.join('app', 'models', '**')]
 
     # Avoid Locales Warning
-    config.i18n.enforce_available_locales = false
+    I18n.enforce_available_locales = false
   end
 end
