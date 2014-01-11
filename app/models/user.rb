@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
 
   geocoded_by :address do |user, results|
     if geo = results.first
+      user.latitude = geo.latitude
+      user.longitude = geo.longitude
       if city = City.near(geo.coordinates, 50).first
         user.communities << city unless user.communities.include?(city)
       end
