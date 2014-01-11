@@ -39,21 +39,8 @@ class CommunitiesController < ApplicationController
     elsif params[:q].present?
       @community = model.where("name ILIKE (?)", "%#{params[:q]}%").order(:name)
     else
-      @community = model.all.order(:name)
+      @community = model.order(:name)
     end
-    # if params[:type] == "City"
-    #   if params[:q].blank?
-    #     if current_user.cities.present?
-    #       @community = current_user.cities
-    #     else
-    #       @community = City.where(country_code: "US")
-    #     end
-    #   else
-    #     @community = City.where("name ILIKE (?)", "%#{params[:q]}%").order(:name)
-    #   end
-    # else
-    #   @community = Community.all
-    # end
     respond_with @community, only: [:id, :name, :country_name, :country_code], callback: params[:callback]
   end
 

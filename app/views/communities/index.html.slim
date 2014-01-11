@@ -6,3 +6,4 @@
     div
       = link_to community_path(community) do
         = community.name
+  = link_to "Dominican", community_path(Community.find_by(name: "Dominican"))

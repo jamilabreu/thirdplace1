@@ -5,6 +5,17 @@ class User < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
 
+  geocoded_by :address do |user, results|
+    if geo = results.first
+      user.latitude = geo.latitude
+      user.longitude = geo.longitude
+      if city = City.near(geo.coordinates, 50).first
+        user.communities << city unless user.communities.include?(city)
+      end
+    end
+  end
+  after_validation :geocode, if: ->(obj){ obj.address.present? and obj.address_changed? }
+
   has_many :community_users
   has_many :communities, through: :community_users
 
@@ -31,7 +42,7 @@ class User < ActiveRecord::Base
     write_attribute :last_name, name.last if name.length > 1
   end
 
-  def self.from_linkedin_omniauth(auth, signed_in_resource=nil)
+  def self.from_linkedin_omniauth(auth, geo, signed_in_resource=nil)
     where(auth.slice(:provider, :uid)).first_or_create! do |user|
       user.provider = auth.provider
       user.uid = auth.uid
@@ -40,6 +51,7 @@ class User < ActiveRecord::Base
       user.nickname = auth.info.nickname
       user.first_name = auth.info.first_name
       user.last_name = auth.info.last_name
+      user.address = geo.address if geo.address.present? && geo.address != "Reserved"
       user.location = auth.info.location
       user.description = auth.info.description
       user.remote_image_url = auth.info.image
