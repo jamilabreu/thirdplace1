@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20140104035817) do
     t.string   "slug",                         null: false
     t.boolean  "verified",     default: false
     t.boolean  "public",       default: false
+    t.integer  "parent_id"
     t.integer  "linkedin_id"
     t.string   "type"
     t.datetime "created_at"

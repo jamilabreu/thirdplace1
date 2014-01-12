@@ -5,11 +5,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     if user.persisted?
       flash.notice = "Signed in!"
       if user.sign_in_count == 0
+        # UserMailer.delay.welcome_email(user) # .delay_for(1.day)
         user.update_linkedin_image
-        # user.geocode(request.location)
-        # if community = Community.find_by(id: params[:community])
-        #   user.communities << community
-        # end
         # # user.update_linkedin_education
         # # user.update_linkedin_companies
       end

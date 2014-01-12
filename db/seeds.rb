@@ -25,10 +25,25 @@ Carmen::Country.all.each do |country|
   puts country.name
 end
 
+Carmen::Country.all[232].subregions.each do |state|
+  country_id = Country.find_by(country_code: "US").id
+  state = State.create(name: state.name, filter_name: state.name, country_code: "US", slug: state.name.parameterize, parent_id: country_id, verified: true)
+  puts state.name
+end
+
 CSV.foreach('lib/data/cities-dev.csv') do |row|
   country = Country.find_by(country_code: row[4], verified: true)
   puts country.name
-  city = country.communities.create!(name: row[1], filter_name: "#{row[1]}, #{country.country_code}", country_name: country.name, country_code: country.country_code, latitude: row[2], longitude: row[3], slug: row[1].parameterize, verified: true, type: "City")
+  city = country.communities.create!(name: row[1], filter_name: "#{row[1]}, #{country.country_code}", country_name: country.name, country_code: country.country_code, latitude: row[2], longitude: row[3], slug: row[1].parameterize, verified: true, parent_id: country.id, type: "City")
+  if country.country_code == "US"
+    state_name = Geocoder.search([row[2],row[3]]).first.state
+    sleep 1
+    state = State.find_by(name: state_name)
+    state.communities << city
+    city.update(parent_id: state.id)
+  else
+    city.update(parent_id: country.id)
+  end
   puts city.name
   sleep 1
 end
@@ -39,7 +54,7 @@ puts "CREATE USERS"
     email: Faker::Internet.email,
     password: Devise.friendly_token[0,20],
     name: "#{Faker::Name.first_name} #{Faker::Name.last_name}",
-    communities: [Community.all.sample, Community.all.sample, Community.find_by(name: "Dominican")]
+    communities: Community.where.not(type: "Country").sample(2).push(City.last).push(Community.find_by(name: "Dominican"))
   )
 end
 

@@ -26,4 +26,16 @@ Rails.application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+
+  # Mailer
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.mandrillapp.com',
+    port: 587,
+    enable_starttls_auto: true,
+    user_name: ENV['MANDRILL_USERNAME'],
+    password: ENV['MANDRILL_KEY_DEVELOPMENT'],
+    authentication: 'login'
+  }
 end

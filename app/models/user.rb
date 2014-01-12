@@ -31,6 +31,7 @@ class User < ActiveRecord::Base
       array.map do |community_id|
         community = Community.find(community_id)
         communities << community unless self.communities.include?(community)
+        communities << community.parents if community_type == "City"
       end
     end
   end

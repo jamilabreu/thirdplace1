@@ -12,6 +12,7 @@ class CreateCommunities < ActiveRecord::Migration
       t.string :slug, null: false
       t.boolean :verified, default: false
       t.boolean :public, default: false
+      t.integer :parent_id
       t.integer :linkedin_id
       t.string :type
 

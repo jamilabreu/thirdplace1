@@ -9,8 +9,20 @@ class Community < ActiveRecord::Base
   has_many :subcommunities, foreign_key: 'community_id', dependent: :destroy
   has_many :communities, through: :subcommunities, source: :subcommunity
 
+  def parent
+    Community.find(parent_id)
+  end
+
   def parents
   	Community.joins(:subcommunities).where(subcommunities: { subcommunity_id: id })
+  end
+
+  def state
+    parents.where(type: "State")
+  end
+
+  def country
+    parents.where(type: "Country")
   end
 
   def has_subcommunities?
