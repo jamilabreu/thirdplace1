@@ -62,6 +62,9 @@ gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'geocoder', github: 'alexreisner/geocoder'
 gem 'carmen-rails', github: 'jim/carmen-rails'
 
+# SIDEKIQ
+gem 'sidekiq'
+
 group :development do
 	gem 'spring'
 	gem 'guard'
