@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/Compass/compass-rails.git
-  revision: 30ca43b72a1a986a35055f9999a49b62e2257f5c
+  revision: e7fce026f270955a636c14e011068fc94bb6c36f
   specs:
     compass-rails (1.1.2)
       compass (>= 0.12.2)
@@ -15,7 +15,7 @@ GIT
 
 GIT
   remote: git://github.com/activerecord-hackery/ransack.git
-  revision: 8693b6b64d89b03c7b64f5e1a7cc507a2e0ffea9
+  revision: 5734741a86c97400587b80032fec5363321e9966
   branch: rails-4.1
   specs:
     ransack (1.1.0)
@@ -26,7 +26,7 @@ GIT
 
 GIT
   remote: git://github.com/alexreisner/geocoder.git
-  revision: a78ea8f17d404c687e7fd73eaee18ad0f5ae800f
+  revision: 9c9a8ea089558a623c58737cebf7ae4df4ff699b
   specs:
     geocoder (1.1.9)
 
@@ -47,15 +47,15 @@ GIT
 
 GIT
   remote: git://github.com/ericam/susy.git
-  revision: 403232c5ee2d5a7b7ebc56b3b334132dd32f045a
+  revision: 6c291e5ed6aacf8e3a67cbb3fa4648a9abec01fc
   branch: susy-next
   specs:
-    susy (2.0.0.beta.2)
+    susy (2.0.0.beta.3)
       sass (~> 3.3.0.rc.1)
 
 GIT
   remote: git://github.com/gregbell/active_admin.git
-  revision: 8c2ff62c30beda6ae4f2c389c113c3a65bd5e785
+  revision: b7e8c7dde2c26a47e5db0dd1efc163405afadd9d
   specs:
     activeadmin (1.0.0.pre)
       arbre (~> 1.0)
@@ -66,7 +66,7 @@ GIT
       inherited_resources (~> 1.3)
       jquery-rails
       jquery-ui-rails
-      kaminari (~> 0.14, != 0.15.0)
+      kaminari (~> 0.15)
       rails (>= 3.2, < 4.1)
       ransack (~> 1.0)
       sass-rails
@@ -89,14 +89,14 @@ GIT
 
 GIT
   remote: git://github.com/justinfrench/formtastic.git
-  revision: be1b7695b3b4a8d748238ee844eb25862a7d1642
+  revision: dc5c0472d0fb898933c2fcea18b7087de7a05f02
   specs:
     formtastic (2.3.0.rc2)
       actionpack (>= 3.0)
 
 GIT
   remote: git://github.com/laserlemon/figaro.git
-  revision: 7631d9c99b8b986960ba0b9691e4ff63e5299cf1
+  revision: e16f2d47f6516e8420ce21c9de76785d9f244bae
   specs:
     figaro (0.7.0)
       rails (>= 3, < 5)
@@ -104,10 +104,9 @@ GIT
 
 GIT
   remote: git://github.com/nex3/sass.git
-  revision: c8086d75437610142f33427b1f6af6b9b34baba8
+  revision: 9ca3a0d3891b745c54f49baff76e1fc005cb7484
   specs:
     sass (3.3.0.rc.2)
-      listen (~> 1.1.0)
 
 GIT
   remote: git://github.com/norman/friendly_id.git
@@ -118,7 +117,7 @@ GIT
 
 GIT
   remote: git://github.com/plataformatec/devise.git
-  revision: e16278966fec9ca94c759a68f8bbe54d210471a4
+  revision: 791657f3eff1542913fd486469b8f01998aa72db
   specs:
     devise (3.2.2)
       bcrypt-ruby (~> 3.0)
@@ -129,7 +128,7 @@ GIT
 
 GIT
   remote: git://github.com/plataformatec/simple_form.git
-  revision: 7fa6e5fc83fd5e8d3e5aca41058e6ba21c7361df
+  revision: ea5ceb7dfa613f432efbfa04195c86599a16d973
   specs:
     simple_form (3.0.1)
       actionpack (>= 4.0.0, < 4.1)
@@ -137,7 +136,7 @@ GIT
 
 GIT
   remote: git://github.com/rails/arel.git
-  revision: da32cd1503756eac67ec244b4dcf16c40888134c
+  revision: f0ba9e4e56cf4dfa266147fad7e8f58ca577d614
   specs:
     arel (5.0.0.20131204235845)
 
@@ -151,7 +150,7 @@ GIT
 
 GIT
   remote: git://github.com/rails/rails.git
-  revision: 65251820ef0ab7f3cffb38130de3dd41af8d72be
+  revision: f1a0b15139a955cf67bc2fd2909840b32ce73485
   specs:
     actionmailer (4.1.0.beta1)
       actionpack (= 4.1.0.beta1)
@@ -197,7 +196,7 @@ GIT
 
 GIT
   remote: git://github.com/rails/sass-rails.git
-  revision: f65b9005de112b74cd09e5dedeae23603c3b1413
+  revision: 6d4e551a114a7e3458ce3cb1edb39da07935919e
   specs:
     sass-rails (4.0.1)
       railties (>= 4.0.0, < 5.0)
@@ -206,7 +205,7 @@ GIT
 
 GIT
   remote: git://github.com/rails/sprockets-rails.git
-  revision: 3a8971aa49a447194c41cb93d26c8d3a4cfadb61
+  revision: 7d53c55c96a1f900553038d6354136fed8536c8a
   specs:
     sprockets-rails (2.0.1)
       actionpack (>= 3.0)
@@ -296,10 +295,10 @@ GEM
     jquery-ui-rails (4.1.1)
       railties (>= 3.1.0)
     json (1.8.1)
-    kaminari (0.14.1)
+    kaminari (0.15.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
-    linkedin (0.4.4)
+    linkedin (0.4.6)
       hashie (>= 1.2, < 2.1)
       multi_json (~> 1.0)
       oauth (~> 0.4)
@@ -316,17 +315,17 @@ GEM
     mini_magick (3.7.0)
       subexec (~> 0.2.1)
     mini_portile (0.5.2)
-    minitest (5.2.1)
-    multi_json (1.8.2)
+    minitest (5.2.2)
+    multi_json (1.8.4)
     net-scp (1.1.2)
       net-ssh (>= 2.6.5)
     net-ssh (2.7.0)
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
     oauth (0.4.7)
-    omniauth (1.1.4)
+    omniauth (1.2.1)
       hashie (>= 1.2, < 3)
-      rack
+      rack (~> 1.0)
     omniauth-linkedin (0.1.0)
       omniauth-oauth (~> 1.0)
     omniauth-oauth (1.0.1)
@@ -357,9 +356,9 @@ GEM
       ffi (>= 0.5.0)
     rb-kqueue (0.2.0)
       ffi (>= 0.5.0)
-    rdoc (3.12.2)
+    rdoc (4.1.1)
       json (~> 1.4)
-    redis (3.0.6)
+    redis (3.0.7)
     redis-namespace (1.4.1)
       redis (~> 3.0.4)
     responders (1.0.0)
@@ -368,10 +367,10 @@ GEM
     sassy-maps (0.3.1)
       compass (~> 1.0.0.alpha.13)
       sass (~> 3.3.0.rc.2)
-    sdoc (0.3.20)
-      json (>= 1.1.3)
-      rdoc (~> 3.10)
-    sidekiq (2.17.2)
+    sdoc (0.4.0)
+      json (~> 1.8)
+      rdoc (~> 4.0, < 5.0)
+    sidekiq (2.17.3)
       celluloid (>= 0.15.2)
       connection_pool (>= 1.0.0)
       json
@@ -386,7 +385,7 @@ GEM
       railties (>= 3.0, < 4.1)
       slim (~> 2.0)
     slop (3.4.7)
-    spring (1.0.0)
+    spring (1.1.0)
     sprockets (2.10.1)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -403,8 +402,6 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
-    turbolinks (2.1.0)
-      coffee-rails
     tzinfo (1.1.0)
       thread_safe (~> 0.1)
     uglifier (2.4.0)
@@ -462,5 +459,4 @@ DEPENDENCIES
   sprockets-rails!
   susy!
   table_print
-  turbolinks
   uglifier (>= 1.3.0)

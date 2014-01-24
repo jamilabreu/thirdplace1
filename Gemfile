@@ -9,7 +9,6 @@ gem 'sass-rails',       github: "rails/sass-rails"
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails',     github: "rails/coffee-rails"
 gem 'jquery-rails'
-gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'slim-rails'
 gem 'ffaker'
