@@ -2,7 +2,7 @@ class CommunitiesController < ApplicationController
   [Gender, Standing, Degree, Field, Interest, School, Culture, Company, City, Country, Orientation, Profession, Relationship, Religion ] if Rails.env.development?
 
   respond_to :json
-  before_action :load_community, only: [:people, :groups]
+  before_action :load_community, only: [:people, :news, :groups]
 
   def index
     @communities = School.all
@@ -15,7 +15,7 @@ class CommunitiesController < ApplicationController
 
     # Users
     community_ids = [@community.id.to_s].concat(params[:f] || [])
-    users = User.joins(:communities).where(communities: {id: community_ids })
+    users = User.joins(:communities).where(communities: { id: community_ids })
     users = users.select("users.*, count(distinct(communities.id))").group("users.id").having("count(distinct(communities.id)) = (?)", community_ids.length) if params[:f]
     @users = Kaminari.paginate_array(users.shuffle).page(params[:page]).per(12)
 
@@ -25,6 +25,10 @@ class CommunitiesController < ApplicationController
     @subclass_names.each do |name|
       instance_variable_set("@#{name}_filters", communities.where(type: name).where.not(id: @community))
     end
+  end
+
+  def news
+    @posts = Post.all
   end
 
   def groups

@@ -80,9 +80,82 @@ header
     i
       margin-left: 10px
 
+// OFF-CANVAS
+.main
+  margin-right: -100%
+  @include breakpoint($medium)
+    margin-right: 0
+
+.left
+  @include apply-side-rhythm-border(bottom, 1px, 0, $border-style: solid $light-purple)
+  @include apply-side-rhythm-border(right, 1px, 0, $border-style: solid $light-purple)
+  @include apply-side-rhythm-border(top, 1px, 0, $border-style: solid $light-purple)
+  @include rem(padding-left, rhythm(0.25))
+  @include transition(0.3s all ease)
+  background: white
+  border-radius: 0 4px 4px 0
+  box-shadow: 2px 2px 2px #FFF
+  margin-left: -100%
+  position: relative
+  right: rhythm(0.25)
+  .show-left &
+    margin-left: 0
+  @include breakpoint($medium)
+    border: 0
+    padding: 0
+    background: transparent
+    border-radius: 0
+    margin-left: 0
+
+// TOGGLE
+.users-column
+  .toggle-left
+    a
+      @include adjust-font-size-to(14px)
+      @include rem(margin-bottom, rhythm(1))
+      @include rem(padding, rhythm(0.15) rhythm(0.6))
+      background: #e5f6f4
+      border-radius: 300px
+      color: $turquoise
+      display: inline-block
+      font-weight: 700
+      i
+        @include rem(margin-right, 7px)
+    @include breakpoint($medium)
+      display: none
+
+.filters-column
+  .filters-actions
+    @include adjust-font-size-to(14px)
+    ul
+      @include rem(margin-bottom, 1px)
+      @include rem(margin-top, 1px)
+      @include rem(margin-right, 1px)
+      background: #e5f6f4
+      border-top-right-radius: 3px
+      li
+        display: inline-block
+        width: 50%
+        a
+          @include rem(padding, rhythm(0.25) rhythm(0.5))
+          color: $turquoise
+          display: block
+          font-weight: 700
+          i
+            @include rem(margin-right, 7px)
+      li.toggle-left
+        a
+          text-align: right
+      li.filters-clear
+        a
+          color: #606863
+          text-align: left
+    @include breakpoint($medium)
+      display: none
+
 // USERS GRID
 .filters-column
-  @include span(4 of $small-grid)
+  @include span(3 of $small-grid)
   @include breakpoint($medium)
     @include span(2 of $medium-grid)
 
@@ -93,7 +166,6 @@ header
 
 // FILTERS
 .filters
-  @include rem(padding-right, rhythm(0.5))
   ul
     @include margin-trailer(0.75)
     li
@@ -173,7 +245,7 @@ $user-image-size-medium: 154px
   @include box-sizing(border-box)
   width: 99.99%
   .user-card
-    @include transition(all 0.2s ease)
+    @include transition(0.3s all ease)
     float: left
     margin-left: $user-image-size * -0.8
     @include breakpoint($medium)
@@ -218,6 +290,36 @@ $user-image-size-medium: 154px
 nav.pagination
   padding: 13px 0
   text-align: center
+
+// POSTS GRID
+.posts-column
+  @include span(4 of $small-grid)
+  @include breakpoint($medium)
+    @include span(5 of $medium-grid)
+
+// POSTS
+.posts
+
+.post
+  @include margin-trailer(0.5)
+  @include padding-trailer(0.5)
+  @include pie-clearfix
+  border-bottom: 1px solid $light-purple
+
+.post-image
+  float: left
+  img
+    border-radius: 2px
+    height: 50px
+    width: 50px
+
+.post-main
+  margin-left: 50px
+  padding: 0 13px
+
+.post-body
+  @include adjust-font-size-and-line-height-to(15px, 20px)
+
 
 // SIGNUP
 .signup-box

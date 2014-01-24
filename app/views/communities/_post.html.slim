@@ -1,0 +1,6 @@
+.post
+	.post-image
+		= image_tag post.user.image
+	.post-main
+		.post-body
+			= post.body[0..rand(70..140)]

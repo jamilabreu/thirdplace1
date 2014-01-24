@@ -39,3 +39,14 @@ jQuery ->
     $('.user a[data-remote]').on 'ajax:success', (e, data, status, xhr) ->
       $container.packery 'fit', this.parentNode, 0
       $(this.parentNode).find('.user-loading').hide()
+
+  # Toggle Button
+  $('.users-column > .toggle-left, .filters-actions > ul > li.toggle-left').on 'click', () ->
+    $('.container').toggleClass('show-left')
+    $('.users-column > .toggle-left').toggle()
+
+
+    # $('.container').toggleClass('show-left')
+    # $(this).toggle()
+
+

@@ -2,12 +2,26 @@
   = javascript_include_tag 'imagesloaded.min', 'packery.min', 'infinitescroll.min', 'users'
 
 .container
-  .users-column
+  .users-column.main
+    .toggle-left
+        = link_to "#" do
+          i.fa.fa-caret-left
+          | Filters
     .users
-      = render @users
+      = render @users.first(4)
     = paginate @users, remote: true
     .users-loading
-  .filters-column
+  .filters-column.left
+    .filters-actions
+      ul
+        li.filters-clear
+          = link_to "#" do
+            i.fa.fa-times-circle-o
+            | Clear All
+        li.toggle-left
+          = link_to "#" do
+            i.fa.fa-caret-left
+            | Hide
     .filters
       - @subclass_names.each do |name|
         - if instance_variable_get("@#{name}_filters").present?

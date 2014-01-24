@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   resources :communities, only: [:index]
   get '/communities/search' => 'communities#search'
   get '/signup' => 'users#signup', as: :signup
+  get '/settings' => 'users#settings', as: :settings
   get '/:id' => 'communities#people', as: :community
+  get '/:id/news' => 'communities#news', as: :community_news
   get '/:id/groups' => 'communities#groups', as: :community_groups
 
   devise_scope :user do

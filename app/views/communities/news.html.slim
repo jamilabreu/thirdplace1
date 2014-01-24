@@ -1,0 +1,7 @@
+- content_for :javascript do
+  = javascript_include_tag ''
+
+.container
+  .posts-column
+    .posts
+      = render partial: 'post', collection: @posts
